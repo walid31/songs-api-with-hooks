@@ -5,7 +5,7 @@ import Login from './components/Login';
 import Header from './components/Header';
 import Home from './components/Home';
 
-export default AuthContext = createContext();
+export const AuthContext = createContext();
 const initialState = {
   isAuthenticated: false,
   user: null,
