@@ -1,5 +1,4 @@
 import React, { useState, useContext } from 'react';
-import logo from '../logo.svg';
 import {AuthContext} from "../App";
 
 export const Login = () => {
@@ -37,30 +36,33 @@ export const Login = () => {
                 username: data.email,
                 password: data.password
             })
-        }).then(res => {
-            if(res.ok){
-                return res.json();
-            }
-            throw res;
-        }).then(resJson => {
-            dispatch({
-                type: "LOGIN",
-                payload: resJson
             })
-        }).catch(error => {
-            setData({
+            .then(res => {
+                if (res.ok) {
+                return res.json();
+                }
+                throw res;
+            })
+            .then(resJson => {
+                dispatch({
+                    type: "LOGIN",
+                    payload: resJson
+                })
+            })
+            .catch(error => {
+                setData({
                 ...data,
                 isSubmitting: false,
                 errorMessage: error.message || error.statusText
+                });
             });
-        });
     };
     return (
         <div className="login-container">
             <div className="card">
                 <div className="container">
                     <form onSubmit={handleFormSubmit}>
-                    <h1>Login</h1>
+                    <h1 >Login</h1>
                     
                     <label htmlFor="email">
                         Email Address

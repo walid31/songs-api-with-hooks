@@ -3,7 +3,7 @@ import Card from './Card';
 import {AuthContext} from '../App';
 
 const initialState = {
-    song: [],
+    songs: [],
     isFetching: false,
     hasError: false
 };

@@ -2,7 +2,7 @@
 .login-container{
   display: flex;
   align-items: center;
-  background-image: url("");
+  background-image: url("./assets/carry-on-colour.svg");
   height: calc(100vh - 70px);
   background-repeat: no-repeat;
   background-position: right;
